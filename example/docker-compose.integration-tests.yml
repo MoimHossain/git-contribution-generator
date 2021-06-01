@@ -1,0 +1,18 @@
+version: '3'
+services:
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile.integration-tests
+    volumes:
+      - "./integration-tests:/integration-tests"
+      - "./screenshots:/screenshots"
+    command: "wait-for-it.sh web:80 -- mocha --recursive /integration-tests"
+    depends_on:
+      - web
+  web:
+    build:
+      context: ../git-contributions
+      dockerfile: ../git-contributions/Dockerfile
+    expose:
+      - "80"
