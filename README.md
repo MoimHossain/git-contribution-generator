@@ -21,3 +21,5 @@ See the [example directory](example) for a complete Docker Compose example, show
 1. Create a new release on GitHub. The image is tagged with the same version as Puppeteer.
 2. Docker Hub automatically builds images for the tag.
 3. There is no step 3.
+
+---
